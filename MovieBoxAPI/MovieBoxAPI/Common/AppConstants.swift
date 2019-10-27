@@ -10,6 +10,6 @@ import Foundation
 
 struct AppConstants {
     struct API {
-        static let baseURL = "https://rss.itunes.apple.com/api/v1/us/movies/top-movies/all/"
+        static let baseURL = "https://rss.itunes.apple.com/api/v1/us/movies/top-movies/all/25/"
     }
 }

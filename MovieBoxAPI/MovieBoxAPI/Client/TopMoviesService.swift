@@ -37,7 +37,8 @@ public class TopMoviesService: TopMoviesServiceProtocol {
                 return
             }
             
-            if let response = try? JSONDecoder().decode(TopMoviesResponse.self, from: data) {
+            let decoder = Decoders.plainDateDecoder
+            if let response = try? decoder.decode(TopMoviesResponse.self, from: data) {
                 completion(.success(response))
             } else {
                 completion(.failure(APIError.invalidResponse))
