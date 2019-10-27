@@ -8,13 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		17F6F63223658F0E0089D0EF /* MovieBoxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F6F62823658F0E0089D0EF /* MovieBoxAPI.framework */; };
-		17F6F63723658F0E0089D0EF /* MovieBoxAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F6F63623658F0E0089D0EF /* MovieBoxAPITests.swift */; };
 		17F6F6622365AC020089D0EF /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F6F6612365AC020089D0EF /* Movie.swift */; };
 		17F6F6672365AC6D0089D0EF /* Decoders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F6F6662365AC6D0089D0EF /* Decoders.swift */; };
 		17F6F6692365AD420089D0EF /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F6F6682365AD420089D0EF /* Result.swift */; };
-		17F6F66B2365ADB90089D0EF /* MovieBoxServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F6F66A2365ADB90089D0EF /* MovieBoxServices.swift */; };
 		17F6F66E2365AE3C0089D0EF /* TopMoviesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F6F66D2365AE3C0089D0EF /* TopMoviesResponse.swift */; };
 		17F6F6722365B15E0089D0EF /* movie.json in Resources */ = {isa = PBXBuildFile; fileRef = 17F6F6712365B15E0089D0EF /* movie.json */; };
+		17F6F69C2366150E0089D0EF /* APIEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F6F69B2366150E0089D0EF /* APIEngine.swift */; };
+		17F6F69E2366151C0089D0EF /* APIEngineProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F6F69D2366151C0089D0EF /* APIEngineProtocol.swift */; };
+		17F6F6A1236617090089D0EF /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F6F6A0236617090089D0EF /* AppConstants.swift */; };
+		17F6F6A3236618770089D0EF /* APIEndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F6F6A2236618770089D0EF /* APIEndPoints.swift */; };
+		17F6F6A823661A3E0089D0EF /* TopMoviesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F6F6A723661A3E0089D0EF /* TopMoviesService.swift */; };
+		17F6F6AA23661B9B0089D0EF /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F6F6A923661B9B0089D0EF /* APIError.swift */; };
+		17F6F6AE236620260089D0EF /* APIEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F6F6AD236620260089D0EF /* APIEngineTests.swift */; };
+		17F6F6B0236620510089D0EF /* APIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F6F6AF236620510089D0EF /* APIClientTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,14 +37,20 @@
 		17F6F62823658F0E0089D0EF /* MovieBoxAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MovieBoxAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		17F6F62C23658F0E0089D0EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17F6F63123658F0E0089D0EF /* MovieBoxAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieBoxAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		17F6F63623658F0E0089D0EF /* MovieBoxAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieBoxAPITests.swift; sourceTree = "<group>"; };
 		17F6F63823658F0E0089D0EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17F6F6612365AC020089D0EF /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		17F6F6662365AC6D0089D0EF /* Decoders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoders.swift; sourceTree = "<group>"; };
 		17F6F6682365AD420089D0EF /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
-		17F6F66A2365ADB90089D0EF /* MovieBoxServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieBoxServices.swift; sourceTree = "<group>"; };
 		17F6F66D2365AE3C0089D0EF /* TopMoviesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMoviesResponse.swift; sourceTree = "<group>"; };
 		17F6F6712365B15E0089D0EF /* movie.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = movie.json; sourceTree = "<group>"; };
+		17F6F69B2366150E0089D0EF /* APIEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEngine.swift; sourceTree = "<group>"; };
+		17F6F69D2366151C0089D0EF /* APIEngineProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEngineProtocol.swift; sourceTree = "<group>"; };
+		17F6F6A0236617090089D0EF /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		17F6F6A2236618770089D0EF /* APIEndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndPoints.swift; sourceTree = "<group>"; };
+		17F6F6A723661A3E0089D0EF /* TopMoviesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMoviesService.swift; sourceTree = "<group>"; };
+		17F6F6A923661B9B0089D0EF /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		17F6F6AD236620260089D0EF /* APIEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEngineTests.swift; sourceTree = "<group>"; };
+		17F6F6AF236620510089D0EF /* APIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,11 +93,13 @@
 		17F6F62A23658F0E0089D0EF /* MovieBoxAPI */ = {
 			isa = PBXGroup;
 			children = (
+				17F6F6A42366199A0089D0EF /* Client */,
+				17F6F69F236616730089D0EF /* Common */,
 				17F6F66C2365AE1B0089D0EF /* Responses */,
 				17F6F6652365AC5C0089D0EF /* Helpers */,
 				17F6F6602365ABD70089D0EF /* DataModels */,
+				17F6F69A236614830089D0EF /* APIEngine */,
 				17F6F62C23658F0E0089D0EF /* Info.plist */,
-				17F6F66A2365ADB90089D0EF /* MovieBoxServices.swift */,
 			);
 			path = MovieBoxAPI;
 			sourceTree = "<group>";
@@ -94,7 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				17F6F6702365B1420089D0EF /* Resources */,
-				17F6F63623658F0E0089D0EF /* MovieBoxAPITests.swift */,
+				17F6F6AB23661FDC0089D0EF /* Engine */,
+				17F6F6AC23661FF60089D0EF /* Client */,
 				17F6F63823658F0E0089D0EF /* Info.plist */,
 			);
 			path = MovieBoxAPITests;
@@ -131,6 +146,49 @@
 				17F6F6712365B15E0089D0EF /* movie.json */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		17F6F69A236614830089D0EF /* APIEngine */ = {
+			isa = PBXGroup;
+			children = (
+				17F6F69B2366150E0089D0EF /* APIEngine.swift */,
+				17F6F69D2366151C0089D0EF /* APIEngineProtocol.swift */,
+				17F6F6A923661B9B0089D0EF /* APIError.swift */,
+			);
+			path = APIEngine;
+			sourceTree = "<group>";
+		};
+		17F6F69F236616730089D0EF /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				17F6F6A0236617090089D0EF /* AppConstants.swift */,
+				17F6F6A2236618770089D0EF /* APIEndPoints.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		17F6F6A42366199A0089D0EF /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				17F6F6A723661A3E0089D0EF /* TopMoviesService.swift */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+		17F6F6AB23661FDC0089D0EF /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				17F6F6AD236620260089D0EF /* APIEngineTests.swift */,
+			);
+			path = Engine;
+			sourceTree = "<group>";
+		};
+		17F6F6AC23661FF60089D0EF /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				17F6F6AF236620510089D0EF /* APIClientTests.swift */,
+			);
+			path = Client;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,9 +302,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				17F6F6692365AD420089D0EF /* Result.swift in Sources */,
+				17F6F69E2366151C0089D0EF /* APIEngineProtocol.swift in Sources */,
 				17F6F6672365AC6D0089D0EF /* Decoders.swift in Sources */,
 				17F6F66E2365AE3C0089D0EF /* TopMoviesResponse.swift in Sources */,
-				17F6F66B2365ADB90089D0EF /* MovieBoxServices.swift in Sources */,
+				17F6F6A1236617090089D0EF /* AppConstants.swift in Sources */,
+				17F6F6A3236618770089D0EF /* APIEndPoints.swift in Sources */,
+				17F6F6A823661A3E0089D0EF /* TopMoviesService.swift in Sources */,
+				17F6F69C2366150E0089D0EF /* APIEngine.swift in Sources */,
+				17F6F6AA23661B9B0089D0EF /* APIError.swift in Sources */,
 				17F6F6622365AC020089D0EF /* Movie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,7 +318,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17F6F63723658F0E0089D0EF /* MovieBoxAPITests.swift in Sources */,
+				17F6F6AE236620260089D0EF /* APIEngineTests.swift in Sources */,
+				17F6F6B0236620510089D0EF /* APIClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
