@@ -7,15 +7,22 @@
 //
 
 import XCTest
+import Utilities
 @testable import MovieBoxAPI
 
 class MovieBoxAPITests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func test_response_parse() throws {
+        let bundle = Bundle(for: MovieBoxAPITests.self)
+        let url = try bundle.url(forResource: "movie", withExtension: "json").unwrap()
+        let data = try Data(contentsOf: url)
+        let decoder = Decoders.plainDateDecoder
+        let movie = try decoder.decode(Movie.self, from: data)
+        
+        XCTAssertEqual(movie.artistName, "Susanna Fogel")
+        XCTAssertEqual(movie.name, "The Spy Who Dumped Me")
+        XCTAssertEqual(movie.copyright, "© 2018 Lions Gate Films Inc. All Rights Reserved")
+        XCTAssertEqual(movie.genres.count, 1)
+        XCTAssertEqual(movie.genres.first?.name, "Comedy")
     }
 }

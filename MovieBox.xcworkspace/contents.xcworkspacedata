@@ -7,4 +7,7 @@
    <FileRef
       location = "group:MovieBoxAPI/MovieBoxAPI.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Utilities/Utilities.xcodeproj">
+   </FileRef>
 </Workspace>
