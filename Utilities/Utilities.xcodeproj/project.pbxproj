@@ -12,6 +12,7 @@
 		17F6F6992365B2E90089D0EF /* OptionalExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F6F6982365B2E90089D0EF /* OptionalExtensions.swift */; };
 		17F6F6D023673F5F0089D0EF /* UICollectionViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F6F6CF23673F5F0089D0EF /* UICollectionViewExtensions.swift */; };
 		17F6F6D223673FA20089D0EF /* UICollectionViewCellExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F6F6D123673FA20089D0EF /* UICollectionViewCellExtensions.swift */; };
+		17F6F6ED236776F20089D0EF /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F6F6EC236776F20089D0EF /* ArrayExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +34,7 @@
 		17F6F6982365B2E90089D0EF /* OptionalExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalExtensions.swift; sourceTree = "<group>"; };
 		17F6F6CF23673F5F0089D0EF /* UICollectionViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtensions.swift; sourceTree = "<group>"; };
 		17F6F6D123673FA20089D0EF /* UICollectionViewCellExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCellExtensions.swift; sourceTree = "<group>"; };
+		17F6F6EC236776F20089D0EF /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 				17F6F6982365B2E90089D0EF /* OptionalExtensions.swift */,
 				17F6F6CF23673F5F0089D0EF /* UICollectionViewExtensions.swift */,
 				17F6F6D123673FA20089D0EF /* UICollectionViewCellExtensions.swift */,
+				17F6F6EC236776F20089D0EF /* ArrayExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				17F6F6D023673F5F0089D0EF /* UICollectionViewExtensions.swift in Sources */,
 				17F6F6992365B2E90089D0EF /* OptionalExtensions.swift in Sources */,
 				17F6F6D223673FA20089D0EF /* UICollectionViewCellExtensions.swift in Sources */,
+				17F6F6ED236776F20089D0EF /* ArrayExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,6 +14,8 @@ protocol MovieListViewModelProtocol {
     var coordinatorDelegate: MovieListCoordinatorViewModelDelegate? { get set }
     
     func load()
+    func getTitle() -> String
+    func getMovieItem(at indexPath: IndexPath) -> MovieItem
     func selectMovie(at index: Int)    
     func getDataSource() -> MovieListDataSource
 }
@@ -48,7 +50,7 @@ final class MovieListViewModel: MovieListViewModelProtocol {
     }
     
     func load() {
-        notify(.updateTitle("Top Movies"))
+        notify(.updateTitle(getTitle()))
         notify(.setLoading(true))
         
         apiClient.fetchTopMovies { [weak self] (result) in
@@ -63,6 +65,14 @@ final class MovieListViewModel: MovieListViewModelProtocol {
                 print(error)
             }
         }
+    }
+    
+    func getTitle() -> String {
+        return "Top Movies"
+    }
+    
+    func getMovieItem(at indexPath: IndexPath) -> MovieItem {
+        return movies[indexPath.row]
     }
     
     func selectMovie(at index: Int) {

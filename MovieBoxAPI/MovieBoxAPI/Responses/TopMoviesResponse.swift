@@ -18,7 +18,7 @@ public struct TopMoviesResponse: Decodable {
     
     public let results: [Movie]
     
-    init(results: [Movie]) {
+    public init(results: [Movie]) {
         self.results = results
     }
     

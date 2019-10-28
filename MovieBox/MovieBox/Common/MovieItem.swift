@@ -9,7 +9,7 @@
 import Foundation
 import MovieBoxAPI
 
-final class MovieItem: NSObject {
+class MovieItem: NSObject {
     let title: String
     let detail: String
     
