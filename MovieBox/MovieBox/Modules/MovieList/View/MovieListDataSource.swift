@@ -9,7 +9,7 @@
 import UIKit
 
 final class MovieListDataSource: NSObject {
-    typealias MovieDidSelectItemHandler = (MovieItem) -> ()
+    typealias MovieDidSelectItemHandler = (Int) -> ()
 
     var movies: [MovieItem] = []
     var didSelectItemHandler: MovieDidSelectItemHandler
@@ -26,20 +26,22 @@ extension MovieListDataSource: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell() // TODO: return from nib
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieItemCell.identifier, for: indexPath) as! MovieItemCell
+        let movie = movies[indexPath.row]
+        cell.setup(with: movie)
+        return cell
     }
 }
 
 extension MovieListDataSource: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let movie = movies[indexPath.row]
-        didSelectItemHandler(movie)
+        didSelectItemHandler(indexPath.row)
     }
 }
 
 extension MovieListDataSource: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width: CGFloat = collectionView.bounds.width - AppConstants.ContentCollection.HorizontalSpaceBetweenItems
+        let width: CGFloat = (collectionView.bounds.width - AppConstants.ContentCollection.HorizontalSpaceBetweenItems * 3) / 2
         let height: CGFloat = width * AppConstants.ContentCollection.PosterImageRatio
         return CGSize(width: width, height: height)
     }
@@ -50,5 +52,11 @@ extension MovieListDataSource: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return AppConstants.ContentCollection.HorizontalSpaceBetweenItems / 2
+    }
+    
+      func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        let leftMargin = CGFloat(AppConstants.ContentCollection.HorizontalSpaceBetweenItems)
+        let topMargin = CGFloat(AppConstants.ContentCollection.VerticleSpaceBetweenItems)
+        return UIEdgeInsets(top: topMargin, left: leftMargin, bottom: topMargin, right: leftMargin)
     }
 }

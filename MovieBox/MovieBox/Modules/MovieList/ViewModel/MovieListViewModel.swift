@@ -11,24 +11,17 @@ import MovieBoxAPI
 
 protocol MovieListViewModelProtocol {
     var delegate: MovieListViewModelDelegate? { get set }
-    var coordinatorDelegate: MovieListCoordinatorViewModelDelegate? { get set}
+    var coordinatorDelegate: MovieListCoordinatorViewModelDelegate? { get set }
     
-    func getTitle() -> String
-    func numberOfItems() -> Int
-    func titleForCell(at indexPath: IndexPath) -> String
-    func getContent(at indexPath: IndexPath) -> MovieItem
-    func getData(completion: @escaping () -> Void)
-    func getDataSource(didSelectItemHandler: @escaping MovieListDataSource.MovieDidSelectItemHandler) -> MovieListDataSource
+    func load()
+    func selectMovie(at index: Int)    
+    func getDataSource() -> MovieListDataSource
 }
 
 enum MovieListViewModelOutput: Equatable {
     case updateTitle(String)
     case setLoading(Bool)
-    case showMovieList([MovieItem])
-}
-
-enum MovieListViewRoute {
-    case detail
+    case reloadMovieList
 }
 
 protocol MovieListViewModelDelegate: class {
@@ -37,6 +30,10 @@ protocol MovieListViewModelDelegate: class {
 
 protocol MovieListCoordinatorViewModelDelegate: class {
     func showDetails(of content: MovieItem)
+}
+
+enum MovieListViewRoute {
+    case detail
 }
 
 final class MovieListViewModel: MovieListViewModelProtocol {
@@ -49,36 +46,39 @@ final class MovieListViewModel: MovieListViewModelProtocol {
     init(apiClient: TopMoviesServiceProtocol) {
         self.apiClient = apiClient
     }
-
-    func getTitle() -> String {
-        return "Top Movies"
-    }
     
-    func numberOfItems() -> Int {
-        movies.count
-    }
-    
-    func titleForCell(at indexPath: IndexPath) -> String {
-        movies[indexPath.row].title
-    }
-    
-    func getContent(at indexPath: IndexPath) -> MovieItem {
-        return movies[indexPath.row]
-    }
-    
-    func getData(completion: @escaping () -> Void) {
-        apiClient.fetchTopMovies { (result) in
+    func load() {
+        notify(.updateTitle("Top Movies"))
+        notify(.setLoading(true))
+        
+        apiClient.fetchTopMovies { [weak self] (result) in
+            guard let self = self else { return }
+            self.notify(.setLoading(false))
+            
             switch result {
             case .success(let data):
                 self.movies = data.results.map({ MovieItem($0) })
+                self.notify(.reloadMovieList)
             case .failure(let error):
                 print(error)
             }
         }
     }
     
-    func getDataSource(didSelectItemHandler: @escaping (MovieItem) -> ()) -> MovieListDataSource {
-        MovieListDataSource(with: movies, didSelectItemHandler: didSelectItemHandler)
+    func selectMovie(at index: Int) {
+        let movie = movies[index]
+        coordinatorDelegate?.showDetails(of: movie)
     }
     
+    func getDataSource() -> MovieListDataSource {
+        let didSelectItemHandler : MovieListDataSource.MovieDidSelectItemHandler = {  [weak self] index in
+            self?.selectMovie(at: index)
+        }
+        
+        return MovieListDataSource(with: movies, didSelectItemHandler: didSelectItemHandler)
+    }
+        
+     private func notify(_ output: MovieListViewModelOutput) {
+         delegate?.handleViewModelOutput(output)
+     }
 }

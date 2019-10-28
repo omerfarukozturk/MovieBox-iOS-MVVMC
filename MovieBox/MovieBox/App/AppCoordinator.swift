@@ -26,7 +26,8 @@ class AppCoordinator: CoordinatorProtocol {
                
         let viewModel = MovieListViewModel(apiClient: apiClient)
         viewModel.coordinatorDelegate = self
-        let viewController = MovieListViewController(viewModel: viewModel)
+        let viewController = MovieListViewController()
+        viewController.viewModel = viewModel
 
         rootViewController = UINavigationController(rootViewController: viewController)
         window.rootViewController = rootViewController

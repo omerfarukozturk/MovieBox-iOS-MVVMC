@@ -13,6 +13,10 @@ final class MovieItemCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.backgroundColor = .red
     }
 
+    func setup(with content: MovieItem) {
+        // TODO: set 
+    }
 }
