@@ -24,16 +24,13 @@ class AppCoordinator: CoordinatorProtocol {
     func start() {
         guard let window = window else { return }
                
-        rootViewController = UINavigationController(rootViewController: MovieListViewController())
-        window.rootViewController = rootViewController
-        window.makeKeyAndVisible()
-    }
-    
-    func getMovieListViewController() -> MovieListViewController {
         let viewModel = MovieListViewModel(apiClient: apiClient)
         viewModel.coordinatorDelegate = self
         let viewController = MovieListViewController(viewModel: viewModel)
-        return viewController
+
+        rootViewController = UINavigationController(rootViewController: viewController)
+        window.rootViewController = rootViewController
+        window.makeKeyAndVisible()
     }
 }
 

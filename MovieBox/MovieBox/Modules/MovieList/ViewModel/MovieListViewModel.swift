@@ -18,7 +18,7 @@ protocol MovieListViewModelProtocol {
     func titleForCell(at indexPath: IndexPath) -> String
     func getContent(at indexPath: IndexPath) -> MovieItem
     func getData(completion: @escaping () -> Void)
-
+    func getDataSource(didSelectItemHandler: @escaping MovieListDataSource.MovieDidSelectItemHandler) -> MovieListDataSource
 }
 
 enum MovieListViewModelOutput: Equatable {
@@ -76,4 +76,9 @@ final class MovieListViewModel: MovieListViewModelProtocol {
             }
         }
     }
+    
+    func getDataSource(didSelectItemHandler: @escaping (MovieItem) -> ()) -> MovieListDataSource {
+        MovieListDataSource(with: movies, didSelectItemHandler: didSelectItemHandler)
+    }
+    
 }
