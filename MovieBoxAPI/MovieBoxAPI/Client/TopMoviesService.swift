@@ -8,19 +8,19 @@
 
 import Foundation
 
-protocol TopMoviesServiceProtocol {
+public protocol TopMoviesServiceProtocol {
     func fetchTopMovies(completion: @escaping (Result<TopMoviesResponse>) -> Void)
 }
 
 public class TopMoviesService: TopMoviesServiceProtocol {
     
-    var apiEngine: APIEngineProtocol
+    public var apiEngine: APIEngineProtocol
     
-    init(apiEngine: APIEngineProtocol) {
+    public init(apiEngine: APIEngineProtocol) {
         self.apiEngine = apiEngine
     }
     
-    func fetchTopMovies(completion: @escaping (Result<TopMoviesResponse>) -> Void) {
+    public func fetchTopMovies(completion: @escaping (Result<TopMoviesResponse>) -> Void) {
         guard let url = URL(string: APIEndPoints.explicit.buildUrl()) else {
             completion(.failure(APIError.invalidURL))
             return

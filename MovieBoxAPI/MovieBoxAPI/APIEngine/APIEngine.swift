@@ -8,15 +8,15 @@
 
 import Foundation
 
-class APIEngine: APIEngineProtocol {
+public class APIEngine: APIEngineProtocol {
     
-    var urlSession: URLSessionProtocol
+    public var urlSession: URLSessionProtocol
     
-    init(urlSession: URLSessionProtocol = URLSession.shared) {
+    public init(urlSession: URLSessionProtocol = URLSession.shared) {
         self.urlSession = urlSession
     }
     
-    func get(url: URL, completion: @escaping (Data?, Error?) -> Void) {
+    public func get(url: URL, completion: @escaping (Data?, Error?) -> Void) {
         let request = URLRequest(url: url)
         
         let dataTask = urlSession.dataTask(with: request) { (data, response, error) in
