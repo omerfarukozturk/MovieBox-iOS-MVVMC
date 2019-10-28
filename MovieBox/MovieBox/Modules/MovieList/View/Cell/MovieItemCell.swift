@@ -7,16 +7,17 @@
 //
 
 import UIKit
+import Utilities
 
 final class MovieItemCell: UICollectionViewCell {
-
+    @IBOutlet weak var posterImage: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        self.backgroundColor = .red
+        layer.cornerRadius = 8.0
     }
 
-    func setup(with content: MovieItem) {
-        // TODO: set 
+    func setup(with movie: MovieItem) {
+        posterImage.setImage(with: movie.imageUrl)
     }
 }
