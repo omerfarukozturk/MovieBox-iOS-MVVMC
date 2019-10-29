@@ -29,7 +29,7 @@
                     </collectionViewFlowLayout>
                 </collectionView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="Mha-rR-6Go" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="MUT-Jw-uZV"/>
                 <constraint firstAttribute="bottom" secondItem="Mha-rR-6Go" secondAttribute="bottom" id="R2n-gP-OWs"/>

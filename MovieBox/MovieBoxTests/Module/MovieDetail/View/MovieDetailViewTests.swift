@@ -11,12 +11,12 @@ import XCTest
 
 class MovieDetailViewTest: XCTestCase {
     
-    func test_detail_controller_deinited(){
+    func test_detail_controller_deinited() throws {
         let exp = expectation(description: "deinit")
         
         var sut: MockDetailView? = MockDetailView()
-        let movieItem = MovieItem(title: "Test", detail: "Detail", imageUrl: URL(string: "https://")!)
-        let viewModel = MovieDetailViewModel(movie: movieItem)
+        let movie1 = try ResourceLoader.loadMovie(resource: .movie1)
+        let viewModel = MovieDetailViewModel(movie: movie1)
         sut?.viewModel = viewModel
         
         sut?.deinitCalled = {

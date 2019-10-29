@@ -19,13 +19,13 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vwB-NA-Dk4">
                         <rect key="frame" x="0.0" y="0.0" width="270" height="330"/>
                     </imageView>
-                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w3Y-yk-w2B">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w3Y-yk-w2B">
                         <rect key="frame" x="0.0" y="264" width="270" height="66"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IsG-Nb-MZG">
-                        <rect key="frame" x="14" y="284" width="246" height="26"/>
-                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="19"/>
+                        <rect key="frame" x="14" y="296.5" width="246" height="23.5"/>
+                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -35,6 +35,7 @@
                 <constraint firstAttribute="bottom" secondItem="w3Y-yk-w2B" secondAttribute="bottom" id="6kq-ZX-KZc"/>
                 <constraint firstAttribute="trailing" secondItem="w3Y-yk-w2B" secondAttribute="trailing" id="D1p-2r-7bC"/>
                 <constraint firstItem="w3Y-yk-w2B" firstAttribute="trailing" secondItem="IsG-Nb-MZG" secondAttribute="trailing" constant="10" id="E3W-V1-Mu4"/>
+                <constraint firstItem="IsG-Nb-MZG" firstAttribute="bottom" secondItem="w3Y-yk-w2B" secondAttribute="bottom" constant="-10" id="GH5-Gn-Bc9"/>
                 <constraint firstItem="vwB-NA-Dk4" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Lqu-tj-Zh0"/>
                 <constraint firstItem="IsG-Nb-MZG" firstAttribute="leading" secondItem="w3Y-yk-w2B" secondAttribute="leading" constant="14" id="TYa-ne-2uu"/>
                 <constraint firstItem="w3Y-yk-w2B" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="W0B-Ti-3lZ"/>
@@ -42,11 +43,11 @@
                 <constraint firstItem="vwB-NA-Dk4" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="n9c-gT-MJf"/>
                 <constraint firstItem="w3Y-yk-w2B" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="1:5" id="udz-fc-rLw"/>
                 <constraint firstAttribute="bottom" secondItem="vwB-NA-Dk4" secondAttribute="bottom" id="yhR-0K-XZE"/>
-                <constraint firstItem="IsG-Nb-MZG" firstAttribute="centerY" secondItem="w3Y-yk-w2B" secondAttribute="centerY" id="zjd-eC-2dj"/>
             </constraints>
             <size key="customSize" width="270" height="330"/>
             <connections>
                 <outlet property="posterImage" destination="vwB-NA-Dk4" id="CGF-go-gsj"/>
+                <outlet property="titleBackgroundView" destination="w3Y-yk-w2B" id="Mdk-2s-Q0e"/>
                 <outlet property="titleLabel" destination="IsG-Nb-MZG" id="O2o-g6-nW4"/>
             </connections>
             <point key="canvasLocation" x="297.10144927536237" y="235.71428571428569"/>

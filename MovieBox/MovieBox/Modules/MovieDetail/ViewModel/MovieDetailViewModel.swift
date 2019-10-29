@@ -16,7 +16,7 @@ protocol MovieDetailCoordinatorViewModelDelegate: class {
 protocol MovieDetailViewModelProtocol {
     var coordinatorDelegate: MovieDetailCoordinatorViewModelDelegate? { get set }
     func getTitle() -> String
-    func getDetail() -> MovieItem
+    func getMovieDetail() -> MovieItem
     func dismiss()
 }
 
@@ -33,7 +33,7 @@ class MovieDetailViewModel: MovieDetailViewModelProtocol {
         return movie.title
     }
     
-    func getDetail() -> MovieItem {
+    func getMovieDetail() -> MovieItem {
         return movie
     }
     
