@@ -8,12 +8,20 @@
 
 import Foundation
 
+// - MARK: Coordinator Delegate
+protocol MovieDetailCoordinatorViewModelDelegate: class {
+    func dismiss()
+}
+
 protocol MovieDetailViewModelProtocol {
+    var coordinatorDelegate: MovieDetailCoordinatorViewModelDelegate? { get set }
     func getTitle() -> String
     func getDetail() -> MovieItem
+    func dismiss()
 }
 
 class MovieDetailViewModel: MovieDetailViewModelProtocol {
+    var coordinatorDelegate: MovieDetailCoordinatorViewModelDelegate?
     
     private var movie: MovieItem!
     
@@ -28,9 +36,10 @@ class MovieDetailViewModel: MovieDetailViewModelProtocol {
     func getDetail() -> MovieItem {
         return movie
     }
+    
+    func dismiss() {
+        coordinatorDelegate?.dismiss()
+    }
 }
 
-// - MARK: Coordinator Delegate
-protocol MovieDetailCoordinatorViewModelDelegate: class {
-    func dismiss()
-}
+

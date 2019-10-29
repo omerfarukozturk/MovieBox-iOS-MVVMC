@@ -41,7 +41,15 @@ extension AppCoordinator: MovieListCoordinatorViewModelDelegate {
     
     func showDetails(of movie: MovieItem) {
         let detailCoordinator = MovieDetailCoordinator(navigationController: rootViewController, movie: movie)
+        detailCoordinator.coordinatorDelegate = self
         childCoordinator = detailCoordinator
         detailCoordinator.start()
+    }
+}
+
+extension AppCoordinator: MovieDetailCoordinatorDelegate {
+    func requestDismissal() {
+        rootViewController.dismiss(animated: true)
+        childCoordinator = nil
     }
 }

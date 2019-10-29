@@ -8,7 +8,12 @@
 
 import UIKit
 
+protocol MovieDetailCoordinatorDelegate: class {
+    func requestDismissal()
+}
+
 class MovieDetailCoordinator: CoordinatorProtocol {
+    weak var coordinatorDelegate: MovieDetailCoordinatorDelegate?
     
     let navigationController: UINavigationController
     let movie: MovieItem
@@ -20,8 +25,16 @@ class MovieDetailCoordinator: CoordinatorProtocol {
     
     func start() {
         let viewModel = MovieDetailViewModel(movie: movie)
+        viewModel.coordinatorDelegate = self
         let detailViewController = MovieDetailViewController()
         detailViewController.viewModel = viewModel
-        navigationController.show(detailViewController, sender: nil)
+        navigationController.present(detailViewController, animated: true, completion: nil)
+    }
+}
+
+extension MovieDetailCoordinator: MovieDetailCoordinatorViewModelDelegate {
+    
+    func dismiss() {
+        coordinatorDelegate?.requestDismissal()
     }
 }

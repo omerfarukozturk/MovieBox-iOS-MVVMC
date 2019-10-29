@@ -25,7 +25,6 @@ final class MovieListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        prepareUI()
         registerCells()
         viewModel.load()
     }
@@ -40,10 +39,6 @@ final class MovieListViewController: UIViewController {
     }
     
     // MARK: UI
-    
-    private func prepareUI() {
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
-    }
     
     private func registerCells() {
         collectionView.register(MovieItemCell.self)

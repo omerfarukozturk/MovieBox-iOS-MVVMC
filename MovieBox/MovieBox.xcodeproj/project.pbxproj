@@ -15,7 +15,6 @@
 		17F6F65F2365A97F0089D0EF /* AppCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F6F65E2365A97F0089D0EF /* AppCoordinatorTests.swift */; };
 		17F6F6B52366E9490089D0EF /* MovieListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F6F6B42366E9490089D0EF /* MovieListViewModel.swift */; };
 		17F6F6BB2366EB250089D0EF /* MovieListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F6F6B92366EB250089D0EF /* MovieListViewController.swift */; };
-		17F6F6BC2366EB250089D0EF /* MovieListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17F6F6BA2366EB250089D0EF /* MovieListViewController.xib */; };
 		17F6F6C12366EFAC0089D0EF /* MovieItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F6F6C02366EFAC0089D0EF /* MovieItem.swift */; };
 		17F6F6C62367373B0089D0EF /* MovieListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F6F6C52367373B0089D0EF /* MovieListDataSource.swift */; };
 		17F6F6CA236738AC0089D0EF /* MovieItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F6F6C8236738AC0089D0EF /* MovieItemCell.swift */; };
@@ -32,6 +31,9 @@
 		17F6F6FB2368221E0089D0EF /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F6F6F92368221E0089D0EF /* MovieDetailViewController.swift */; };
 		17F6F6FC2368221E0089D0EF /* MovieDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17F6F6FA2368221E0089D0EF /* MovieDetailViewController.xib */; };
 		17F6F702236826240089D0EF /* MovieDetailViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F6F701236826240089D0EF /* MovieDetailViewTests.swift */; };
+		17F6F705236839AF0089D0EF /* MovieDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F6F703236839AF0089D0EF /* MovieDetailCell.swift */; };
+		17F6F706236839AF0089D0EF /* MovieDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17F6F704236839AF0089D0EF /* MovieDetailCell.xib */; };
+		17F6F70823683B510089D0EF /* MovieListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17F6F6BA2366EB250089D0EF /* MovieListViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,8 @@
 		17F6F6F92368221E0089D0EF /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		17F6F6FA2368221E0089D0EF /* MovieDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieDetailViewController.xib; sourceTree = "<group>"; };
 		17F6F701236826240089D0EF /* MovieDetailViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewTests.swift; sourceTree = "<group>"; };
+		17F6F703236839AF0089D0EF /* MovieDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailCell.swift; sourceTree = "<group>"; };
+		17F6F704236839AF0089D0EF /* MovieDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieDetailCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,6 +303,7 @@
 		17F6F6F1236811E20089D0EF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				17F6F707236839B40089D0EF /* Cell */,
 				17F6F6F92368221E0089D0EF /* MovieDetailViewController.swift */,
 				17F6F6FA2368221E0089D0EF /* MovieDetailViewController.xib */,
 			);
@@ -335,6 +340,15 @@
 				17F6F701236826240089D0EF /* MovieDetailViewTests.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		17F6F707236839B40089D0EF /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				17F6F703236839AF0089D0EF /* MovieDetailCell.swift */,
+				17F6F704236839AF0089D0EF /* MovieDetailCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -419,8 +433,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				17F6F6FC2368221E0089D0EF /* MovieDetailViewController.xib in Resources */,
-				17F6F6BC2366EB250089D0EF /* MovieListViewController.xib in Resources */,
 				17F6F6CB236738AC0089D0EF /* MovieItemCell.xib in Resources */,
+				17F6F706236839AF0089D0EF /* MovieDetailCell.xib in Resources */,
+				17F6F70823683B510089D0EF /* MovieListViewController.xib in Resources */,
 				17F6F60923658EB90089D0EF /* LaunchScreen.storyboard in Resources */,
 				17F6F60623658EB90089D0EF /* Assets.xcassets in Resources */,
 			);
@@ -450,6 +465,7 @@
 				17F6F6FB2368221E0089D0EF /* MovieDetailViewController.swift in Sources */,
 				17F6F6C62367373B0089D0EF /* MovieListDataSource.swift in Sources */,
 				17F6F5FD23658EB60089D0EF /* AppDelegate.swift in Sources */,
+				17F6F705236839AF0089D0EF /* MovieDetailCell.swift in Sources */,
 				17F6F6BB2366EB250089D0EF /* MovieListViewController.swift in Sources */,
 				17F6F6F4236813460089D0EF /* MovieDetailViewModel.swift in Sources */,
 				17F6F645236591590089D0EF /* Coordinator.swift in Sources */,

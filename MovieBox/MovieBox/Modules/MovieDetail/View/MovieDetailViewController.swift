@@ -11,7 +11,11 @@ import UIKit
 class MovieDetailViewController: UIViewController {
     var viewModel: MovieDetailViewModelProtocol!
     
-    deinit {
-        print("\(self) deinited.")
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    @IBAction func closePage(_ sender: Any) {
+        viewModel.dismiss()
     }
 }
