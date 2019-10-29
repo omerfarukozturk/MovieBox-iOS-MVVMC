@@ -26,8 +26,7 @@ class MovieDetailCoordinator: CoordinatorProtocol {
     func start() {
         let viewModel = MovieDetailViewModel(movie: movie)
         viewModel.coordinatorDelegate = self
-        let detailViewController = MovieDetailViewController()
-        detailViewController.viewModel = viewModel
+        let detailViewController = MovieDetailViewController(viewModel: viewModel)
         navigationController.present(detailViewController, animated: true, completion: nil)
     }
 }

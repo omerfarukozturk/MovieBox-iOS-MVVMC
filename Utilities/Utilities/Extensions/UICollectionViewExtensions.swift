@@ -10,6 +10,6 @@ import UIKit
 
 extension UICollectionView {
     public func register(_ cell: UICollectionViewCell.Type) {
-         register(UINib(nibName: cell.identifier, bundle: nil), forCellWithReuseIdentifier: cell.identifier)
+        register(UINib(nibName: cell.identifier, bundle: nil), forCellWithReuseIdentifier: cell.identifier)
     }
 }

@@ -10,25 +10,39 @@ import XCTest
 @testable import Utilities
 
 class UtilitiesTests: XCTestCase {
-
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    func test_optional_extension_unwrapThrows() {
+        // Given:
+        let item: Int? = nil
+        
+        // Then:
+        XCTAssertThrowsError(try item.unwrap())
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func test_optional_extension_unwrapReturnsWrapped() {
+        // Given:
+        var item: Int?
+        
+        // When:
+        item = 1
+        
+        // Then:
+        XCTAssertEqual(try item.unwrap(), 1)
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func test_array_extension_elementAtThrows() throws {
+        // Given:
+        let emptyArray: [Int] = [1, 2, 3]
+        
+        // Then:
+        XCTAssertThrowsError(try emptyArray.element(at: 3))
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func test_array_extension_elementAtReturns() throws {
+        // Given:
+        let emptyArray: [Int] = [1, 2, 3]
+        
+        // Then:
+        XCTAssertEqual(try emptyArray.element(at: 0), 1)
     }
-
 }

@@ -10,11 +10,11 @@ import UIKit
 
 class MovieDetailCell: UITableViewCell {
 
-    @IBOutlet private weak var titleLabel: UILabel!
-    @IBOutlet private weak var aristNameLabel: UILabel!
-    @IBOutlet private weak var genreLabel: UILabel!
-    @IBOutlet private weak var releaseDateLabel: UILabel!
-    @IBOutlet private weak var posterImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var aristNameLabel: UILabel!
+    @IBOutlet weak var genreLabel: UILabel!
+    @IBOutlet weak var releaseDateLabel: UILabel!
+    @IBOutlet weak var posterImageView: UIImageView!
 
     func setup(with movie: MovieItem) {
         titleLabel.text = movie.title

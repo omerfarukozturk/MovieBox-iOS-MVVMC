@@ -12,7 +12,12 @@ class MovieDetailViewController: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
 
-    var viewModel: MovieDetailViewModelProtocol!
+    private var viewModel: MovieDetailViewModelProtocol!
+    
+    convenience init(viewModel: MovieDetailViewModelProtocol) {
+        self.init()
+        self.viewModel = viewModel
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
