@@ -15,6 +15,8 @@ class AppCoordinator: CoordinatorProtocol {
     var apiEngine: APIEngine!
     let apiClient: TopMoviesServiceProtocol!
 
+    var childCoordinator: CoordinatorProtocol?
+    
     init(window: UIWindow) {
         self.window = window
         self.apiEngine = APIEngine()
@@ -37,7 +39,9 @@ class AppCoordinator: CoordinatorProtocol {
 
 extension AppCoordinator: MovieListCoordinatorViewModelDelegate {
     
-    func showDetails(of content: MovieItem) {
-        //TODO: navigate to detail
+    func showDetails(of movie: MovieItem) {
+        let detailCoordinator = MovieDetailCoordinator(navigationController: rootViewController, movie: movie)
+        childCoordinator = detailCoordinator
+        detailCoordinator.start()
     }
 }

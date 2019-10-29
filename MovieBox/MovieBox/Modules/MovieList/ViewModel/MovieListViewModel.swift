@@ -34,10 +34,6 @@ protocol MovieListCoordinatorViewModelDelegate: class {
     func showDetails(of content: MovieItem)
 }
 
-enum MovieListViewRoute {
-    case detail
-}
-
 final class MovieListViewModel: MovieListViewModelProtocol {
     var coordinatorDelegate: MovieListCoordinatorViewModelDelegate?
     var delegate: MovieListViewModelDelegate?
@@ -88,7 +84,7 @@ final class MovieListViewModel: MovieListViewModelProtocol {
         return MovieListDataSource(with: movies, didSelectItemHandler: didSelectItemHandler)
     }
         
-     private func notify(_ output: MovieListViewModelOutput) {
+    private func notify(_ output: MovieListViewModelOutput) {
          delegate?.handleViewModelOutput(output)
      }
 }

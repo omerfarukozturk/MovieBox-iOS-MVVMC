@@ -38,6 +38,26 @@
                ReferencedContainer = "container:MovieBox.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "17F6F63023658F0E0089D0EF"
+               BuildableName = "MovieBoxAPITests.xctest"
+               BlueprintName = "MovieBoxAPITests"
+               ReferencedContainer = "container:../MovieBoxAPI/MovieBoxAPI.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "17F6F6852365B2B60089D0EF"
+               BuildableName = "UtilitiesTests.xctest"
+               BlueprintName = "UtilitiesTests"
+               ReferencedContainer = "container:../Utilities/Utilities.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
