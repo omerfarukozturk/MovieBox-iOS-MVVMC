@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17B235F4236A203900CE5676 /* MovieBoxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B235F2236A203900CE5676 /* MovieBoxAPI.framework */; };
+		17B235F5236A203900CE5676 /* MovieBoxAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 17B235F2236A203900CE5676 /* MovieBoxAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		17B235F6236A203900CE5676 /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B235F3236A203900CE5676 /* Utilities.framework */; };
+		17B235F7236A203900CE5676 /* Utilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 17B235F3236A203900CE5676 /* Utilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		17F6F5FD23658EB60089D0EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F6F5FC23658EB60089D0EF /* AppDelegate.swift */; };
 		17F6F60623658EB90089D0EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17F6F60523658EB90089D0EF /* Assets.xcassets */; };
 		17F6F60923658EB90089D0EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17F6F60723658EB90089D0EF /* LaunchScreen.storyboard */; };
@@ -48,7 +52,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		17B235F8236A203900CE5676 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				17B235F5236A203900CE5676 /* MovieBoxAPI.framework in Embed Frameworks */,
+				17B235F7236A203900CE5676 /* Utilities.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		17B235F2236A203900CE5676 /* MovieBoxAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MovieBoxAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		17B235F3236A203900CE5676 /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		17F6F5F923658EB60089D0EF /* MovieBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17F6F5FC23658EB60089D0EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17F6F60523658EB90089D0EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -89,6 +110,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17B235F4236A203900CE5676 /* MovieBoxAPI.framework in Frameworks */,
+				17B235F6236A203900CE5676 /* Utilities.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,12 +125,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17B235F1236A203900CE5676 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				17B235F2236A203900CE5676 /* MovieBoxAPI.framework */,
+				17B235F3236A203900CE5676 /* Utilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		17F6F5F023658EB60089D0EF = {
 			isa = PBXGroup;
 			children = (
 				17F6F5FB23658EB60089D0EF /* MovieBox */,
 				17F6F6542365A94C0089D0EF /* MovieBoxTests */,
 				17F6F5FA23658EB60089D0EF /* Products */,
+				17B235F1236A203900CE5676 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -383,6 +416,7 @@
 				17F6F5F523658EB60089D0EF /* Sources */,
 				17F6F5F623658EB60089D0EF /* Frameworks */,
 				17F6F5F723658EB60089D0EF /* Resources */,
+				17B235F8236A203900CE5676 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
