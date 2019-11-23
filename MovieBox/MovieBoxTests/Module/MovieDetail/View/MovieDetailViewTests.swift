@@ -14,7 +14,7 @@ class MovieDetailViewTest: XCTestCase {
     func test_detail_controller_deinited() throws {
         let exp = expectation(description: "deinit")
         
-        let movie1 = try ResourceLoader.loadMovie(resource: .movie1)
+        let movie1 = try ResourceLoader.loadMovieItem(resource: .movie1)
         let viewModel = MovieDetailViewModel(movie: movie1)
         var sut: MockDetailView? = MockDetailView(viewModel: viewModel)
         

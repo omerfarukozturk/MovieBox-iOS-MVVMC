@@ -20,13 +20,17 @@ class ResourceLoader {
         case movie3
     }
     
-    static func loadMovie(resource: MovieResource) throws -> MovieItem {
+    static func loadMovie(resource: MovieResource) throws -> Movie {
         let bundle = Bundle.init(for: ResourceLoader.self)
         let url = try bundle.url(forResource: resource.rawValue, withExtension: "json").unwrap()
         let data = try Data(contentsOf: url)
         let decoder = Decoders.plainDateDecoder
         let movie = try decoder.decode(Movie.self, from: data)
-        let movieItem = MovieItem(movie)
-        return movieItem
+        return movie
+    }
+    
+    static func loadMovieItem(resource: MovieResource) throws -> MovieItem {
+        let movie = try loadMovie(resource: resource)
+        return MovieItem(movie)
     }
 }

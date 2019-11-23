@@ -44,8 +44,8 @@ class MovieListViewModelTests: XCTestCase {
     
     func test_viewModel_getsCorrectContents() throws {
         // Given:
-        let movie1 = try ResourceLoader.loadMovie(resource: .movie1)
-        let movie2 = try ResourceLoader.loadMovie(resource: .movie2)
+        let movie1 = try ResourceLoader.loadMovieItem(resource: .movie1)
+        let movie2 = try ResourceLoader.loadMovieItem(resource: .movie2)
         viewModel.movies = [movie1, movie2]
         
         // Then:

@@ -13,7 +13,7 @@ class MovieDetailViewModelTests: XCTestCase {
     
     func test_viewModel_renderMovie() throws {
         // Given:
-        let movie = try ResourceLoader.loadMovie(resource: .movie1)
+        let movie = try ResourceLoader.loadMovieItem(resource: .movie1)
         let sut = try makeSUT()
         
         // Then:
@@ -22,7 +22,7 @@ class MovieDetailViewModelTests: XCTestCase {
     
     // MARK: Helpers
     func makeSUT() throws -> MovieDetailViewModel {
-        let movie = try ResourceLoader.loadMovie(resource: .movie1)
+        let movie = try ResourceLoader.loadMovieItem(resource: .movie1)
         let viewModel = MovieDetailViewModel(movie: movie)
         return viewModel
     }

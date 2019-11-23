@@ -13,7 +13,7 @@ class MovieDetailCellTests: XCTestCase {
     
     func test_setup_rendersCorrectData() throws {
         let sut = makeSUT()
-        let movie = try ResourceLoader.loadMovie(resource: .movie1)
+        let movie = try ResourceLoader.loadMovieItem(resource: .movie1)
         sut.setup(with: movie)
         
         XCTAssertNotNil(sut.titleLabel)

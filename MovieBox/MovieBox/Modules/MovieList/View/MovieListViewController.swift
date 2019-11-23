@@ -11,8 +11,8 @@ import Utilities
 
 final class MovieListViewController: UIViewController {
 
-    @IBOutlet private weak var collectionView: UICollectionView!
-    private var dataSource: MovieListDataSource?
+    @IBOutlet weak var collectionView: UICollectionView!
+    private(set) var dataSource: MovieListDataSource?
     
     var viewModel: MovieListViewModelProtocol! {
         didSet {

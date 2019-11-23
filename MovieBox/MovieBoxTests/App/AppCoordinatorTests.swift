@@ -11,9 +11,17 @@ import XCTest
 
 class AppCoordinatorTest: XCTestCase {
     
-    func test_app_coordinator_createst_rootViewController() {
+    func test_appCoordinator_createRootViewController() {
         let coordinator = AppCoordinator(window: UIWindow(frame: UIScreen.main.bounds))
         coordinator.start()
         XCTAssertNotNil(coordinator.rootViewController)
+    }
+    
+    func test_appCoordinator_routeToDetail() throws {
+        let coordinator = AppCoordinator(window: UIWindow(frame: UIScreen.main.bounds))
+        coordinator.start()
+        
+        coordinator.showDetails(of: try ResourceLoader.loadMovieItem(resource: .movie1))
+        XCTAssertTrue(coordinator.rootViewController.presentedViewController is MovieDetailViewController)
     }
 }
