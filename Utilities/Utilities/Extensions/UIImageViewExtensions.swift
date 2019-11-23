@@ -8,39 +8,53 @@
 
 import UIKit
 
-// Used for caching images. Should be optimised.
-let imageCache = NSCache<NSString, UIImage>()
+var imageLoader = ImageLoader()
 
 extension UIImageView {
     
-    public func setImage(with url: String) {
+    public func setImage(with url: String, _ completed: @escaping (Bool) -> Void = {_ in}) {
         guard let imageURL = URL(string: url) else { return }
-        setImage(with: imageURL)
+        setImage(with: imageURL, completed)
     }
     
-    public func setImage(with url: URL) {        
-        getImage(from: url) { [weak self] (image) in
+    public func setImage(with url: URL, _ completed: @escaping (Bool) -> Void = {_ in}) {
+        imageLoader.getImage(from: url) { [weak self] (image) in
             DispatchQueue.main.async() {
                 self?.image = image
+                completed(image != nil)
             }
         }
     }
+}
+
+class ImageLoader {
+    private var urlSession: URLSession!
+    private let imageCache = NSCache<NSString, UIImage>()
     
-    private func getImage(from url: URL, completion: @escaping (UIImage?) -> Void) {
+    init(_ urlSession: URLSession = .shared) {
+        self.urlSession = urlSession
+    }
+    
+    func cacheImage(key: String, image: UIImage) {
+        imageCache.setObject(image, forKey: key as NSString)
+    }
+    
+    internal func getImage(_ urlSession: URLSession = .shared, from url: URL, completion: @escaping (UIImage?) -> Void) {
         if let cachedImage = imageCache.object(forKey: url.absoluteString as NSString) {
             completion(cachedImage)
             return
         }
-    
-        let dataTask = URLSession.shared.dataTask(with: url) { data, response, error in
+        
+        let dataTask = self.urlSession.dataTask(with: url) { [weak self] data, response, error in
             guard let data = data, error == nil,
                 let image = UIImage(data: data) else {
                     completion(nil)
                     return
             }
             
-            imageCache.setObject(image, forKey: url.absoluteString as NSString)
-
+            guard let self = self else { return }
+            self.imageCache.setObject(image, forKey: url.absoluteString as NSString)
+            
             completion(image)
         }
         
