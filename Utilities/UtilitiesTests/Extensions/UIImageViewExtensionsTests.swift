@@ -16,7 +16,7 @@ class UIImageViewExtensionsTests: XCTestCase {
         
         let image = UIColor.red.toImage(width: 1, height: 1)
         let session = URLSessionMock(data: image.pngData())
-        imageLoader = ImageLoader(session)
+        imageLoader = ImageLoader(session: session)
         
         let exp = expectation(description: "imageLoad")
         
@@ -32,7 +32,7 @@ class UIImageViewExtensionsTests: XCTestCase {
     func test_imageView_setImageFromCache() {
         let imageView = UIImageView()
         let image = UIColor.red.toImage(width: 1, height: 1)
-        imageLoader = ImageLoader()
+        imageLoader = ImageLoader(session: .shared)
         
         let imageUrl = "https://testimageUrl.png"
         imageLoader.cacheImage(key: imageUrl, image: image)

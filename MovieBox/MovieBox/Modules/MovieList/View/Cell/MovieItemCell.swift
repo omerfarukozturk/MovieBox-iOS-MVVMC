@@ -12,14 +12,13 @@ import Utilities
 final class MovieItemCell: UICollectionViewCell {
     @IBOutlet weak var posterImage: UIImageView!
     @IBOutlet weak var titleBackgroundView: UIView!
-    
     @IBOutlet weak var titleLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         layer.cornerRadius = 8.0
         setGradientBlaclBackground()
     }
-
+    
     func setup(with movie: MovieItem) {
         posterImage.setImage(with: movie.imageUrl)
         titleLabel.text = movie.title
